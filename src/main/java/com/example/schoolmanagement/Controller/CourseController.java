@@ -48,7 +48,7 @@ public class CourseController {
         courseService.AssignTeacherToCourse(teacher_id,course_id);
         return ResponseEntity.status(200).body("assign successfully");
     }
-
+//Create endpoint that take course id and return the teacher name for that class
   @GetMapping("/get/{id}")
     public ResponseEntity GetName(@PathVariable Integer id){
       return ResponseEntity.status(200).body(courseService.GetTeacherName(id));
