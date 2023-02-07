@@ -54,12 +54,5 @@ public class TeacherDetailsService {
         addressRepository.delete(address);
     }
 
-    public Address alldetails(Integer id){
-        Address address = addressRepository.findAddressById(id);
-        if(address==null){
-            throw new ApiException("address id not found!!");
-        }
 
-        return address;
-    }
 }

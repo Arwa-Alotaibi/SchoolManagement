@@ -68,8 +68,8 @@ public class TeacherController {
 //Create endpoint that takes teacher id and return All teacher details
     @GetMapping("/getdetails/{id}")
     public ResponseEntity GetDeatils(@PathVariable Integer id){
-        Address address= teacherDetailsService.alldetails(id);
-        return ResponseEntity.status(200).body(address);
+        Teacher teacher= teacherService.alldetails(id);
+        return ResponseEntity.status(200).body(teacher);
 
     }
 }

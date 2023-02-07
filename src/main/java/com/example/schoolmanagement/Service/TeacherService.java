@@ -2,6 +2,7 @@ package com.example.schoolmanagement.Service;
 
 
 import com.example.schoolmanagement.Exception.ApiException;
+import com.example.schoolmanagement.Model.Address;
 import com.example.schoolmanagement.Model.Teacher;
 import com.example.schoolmanagement.Repository.TeacherRepository;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,14 @@ public class TeacherService {
             throw new ApiException("teacher id not found!!");
         }
         teacherRepository.delete(DeleteTeacher);
+    }
+
+    public Teacher alldetails(Integer id){
+        Teacher teacher = teacherRepository.findTeacherById(id);
+        if(teacher==null){
+            throw new ApiException("teacher id not found!!");
+        }
+
+        return teacher;
     }
 }
