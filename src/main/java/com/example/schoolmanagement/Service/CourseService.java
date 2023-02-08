@@ -8,6 +8,7 @@ import com.example.schoolmanagement.Repository.CourseRepository;
 import com.example.schoolmanagement.Repository.TeacherRepository;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
+import com.example.schoolmanagement.Model.Student;
 
 import java.util.List;
 
@@ -64,4 +65,17 @@ public class CourseService {
         }
         return course.getTeacher().getName();
     }
+
+
+    //takes class id and return the student list
+    public List<Student> ReturnStudentList(Integer course_id){
+        Course course = courseRepository.findCourseById(course_id);
+        if(course==null){
+            throw new ApiException("course id not found");
+        }
+        return course.getStudents();
+    }
+
+
+
 }

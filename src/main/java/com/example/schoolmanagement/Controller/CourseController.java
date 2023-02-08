@@ -2,6 +2,7 @@ package com.example.schoolmanagement.Controller;
 
 
 import com.example.schoolmanagement.Model.Course;
+import com.example.schoolmanagement.Model.Student;
 import com.example.schoolmanagement.Service.CourseService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -52,6 +53,13 @@ public class CourseController {
   @GetMapping("/get/{id}")
     public ResponseEntity GetName(@PathVariable Integer id){
       return ResponseEntity.status(200).body(courseService.GetTeacherName(id));
-
   }
+
+  //Create endpoint that takes class id and return the student list
+    @GetMapping("/students/{course_id}")
+    public ResponseEntity ReturnStudents(@PathVariable Integer course_id){
+       List <Student> student = courseService.ReturnStudentList(course_id);
+        return ResponseEntity.status(200).body(student);
+
+    }
 }
