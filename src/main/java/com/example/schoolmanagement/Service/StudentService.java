@@ -66,7 +66,8 @@ public class StudentService {
 
     public void ChangeMajor(Integer student_id , String major){
         Student student = studentRepository.findStudentById(student_id);
-        Course course = courseRepository.findCourseById(student_id);
+        Course course = courseRepository.findCourseByStudentsId(student_id);
+
 
         if(student==null){
             throw  new ApiException(" student id not found");
