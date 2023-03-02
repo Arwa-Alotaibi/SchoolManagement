@@ -4,4 +4,4 @@ these courses using Java, Spring boot, MySQL.
 
 # UML
 
-![image](https://user-images.githubusercontent.com/88631496/222553584-e89c96e4-2541-46da-9e69-62af8f98b3aa.png)
+![image](https://user-images.githubusercontent.com/88631496/222554860-a82eba66-c678-4368-b738-0d574b69bab1.png)
